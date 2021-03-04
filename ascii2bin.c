@@ -25,7 +25,6 @@ int main (int argc, char * argv[], char ** envp) {
 			}
 		else {
 			error = error + 1;
-			printf("%u\n", error);
 			break;
 			}
 	}
