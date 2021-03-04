@@ -12,7 +12,7 @@ int main (int argc, char * argv[], char ** envp) {
 	char digit=0;
 	char offset = 0x30;
 	int number=0;
-	int error = 1;
+	int error = 0;
 	
 	
     retval = read(0, &ascii_value, 1);
@@ -24,11 +24,17 @@ int main (int argc, char * argv[], char ** envp) {
 			retval = read(0, &ascii_value, 1);
 			}
 		else {
+			error = error + 1;
 			printf("%u\n", error);
-			return 1;
+			break;
 			}
 	}
-
+	if (error == 0) {
     printf("%u\n", number);
 	return 0;
+		}
+	else {
+	return 1;
+	}
+	
 	}
