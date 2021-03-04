@@ -16,7 +16,7 @@ int main (int argc, char * argv[], char ** envp) {
     retval = read(0, &ascii_value, 1);
     while (retval == 1){
 		
-		if(ascii_value == offset || ascii_value == offset-1) {
+		if(ascii_value == offset || ascii_value == 0x31) {
 			digit = ascii_value - offset;
 			number = (number << 1) + digit;  
 			retval = read(0, &ascii_value, 1);
